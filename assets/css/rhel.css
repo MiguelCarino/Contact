@@ -13,7 +13,7 @@ body {
 }
 .container {
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     background: #1c1c1c; /* Dark grey container background */
     border: 2px solid #cc0000; /* Red Hat red border */
     color: #ffffff;

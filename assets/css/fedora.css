@@ -13,7 +13,7 @@ body {
 }
 .container {
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     background: #3c6eb4; /* Lighter Fedora Blue */
     border: 3px solid #ffffff; /* White border for contrast */
     color: #ffffff;

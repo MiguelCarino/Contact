@@ -14,7 +14,7 @@ body {
 }
 .container {
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     background: rgba(255, 250, 240, 0.95); /* Soft parchment background */
     border: 3px solid #8b0000; /* Dark red border for a traditional vibe */
     color: #2c2c2c;

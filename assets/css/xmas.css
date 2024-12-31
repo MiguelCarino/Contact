@@ -15,7 +15,7 @@ body {
 }
 .container {
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
     border: 3px solid #cc0000; /* Christmas red border */
     color: #2a2f23; /* Dark evergreen text */

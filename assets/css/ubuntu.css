@@ -13,7 +13,7 @@ body {
 }
 .container {
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     background: #77216f; /* Ubuntu purple */
     border: 3px solid #e95420; /* Ubuntu orange border */
     color: #ffffff;

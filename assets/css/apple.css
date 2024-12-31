@@ -13,7 +13,7 @@ body {
 }
 .container {
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     background: #ffffff; /* White container */
     border: 1px solid #d2d2d7; /* Light grey border */
     color: #1d1d1f; /* Dark grey text */
