@@ -36,10 +36,18 @@ async function loadProfile() {
 // Define available themes
 const themes = ['colorful', 'cyberpunk', 'retro', 'japanese', 'rhel', 'fedora', 'suse', 'xmas', 'simplew', 'simpleb', 'ubuntu', 'apple', 'microsoft'];
 
-// Function to get a random theme
 function getRandomTheme() {
-    const randomIndex = Math.floor(Math.random() * themes.length);
-    return themes[randomIndex];
+    // Shuffle the themes array for added randomness
+    const shuffledThemes = themes
+        .map(theme => ({ theme, randomKey: Math.random() }))
+        .sort((a, b) => a.randomKey - b.randomKey)
+        .map(obj => obj.theme);
+
+    // Pick a random index based on the shuffled array
+    const randomIndex = Math.floor(Math.random() * shuffledThemes.length);
+
+    // Return the randomly chosen theme, with a fallback if themes array is empty
+    return shuffledThemes[randomIndex] || "default-theme";
 }
 
 // Change themes based on the URL hash
