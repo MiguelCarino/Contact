@@ -1,0 +1,112 @@
+/* colorful.css - Default */
+body {
+    background-image: linear-gradient(to right, #ff7eb3, #ff758c, #ff8b65);
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in;
+}
+.container {
+    width: 90%;
+    max-width: 500px;
+    border: 3px solid #fff;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transform: scale(0.8);
+    animation: popIn 0.6s ease-in-out forwards;
+}
+.photo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff4d4d;
+    opacity: 0;
+    animation: fadeInPhoto 1s ease-in-out 0.6s forwards;
+}
+h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 0.8s forwards;
+}
+h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #666;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 1s forwards;
+}
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 1.2s forwards;
+}
+.contact-info a {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.contact-info a:hover {
+    color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInPhoto {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

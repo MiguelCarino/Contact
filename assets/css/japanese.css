@@ -1,0 +1,115 @@
+/* japanese.css */
+body {
+    background-color: #0d0221;
+    color: #ff00ff;
+    font-family: 'Noto Serif JP', serif;
+    color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in;
+}
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255, 250, 240, 0.95); /* Soft parchment background */
+    border: 3px solid #8b0000; /* Dark red border for a traditional vibe */
+    color: #2c2c2c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transform: scale(0.8);
+    animation: popIn 0.6s ease-in-out forwards;
+}
+.photo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 220px; /* Slightly larger photo */
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #8b0000; /* Dark red border to match container */
+    opacity: 0;
+    animation: fadeInPhoto 1s ease-in-out 0.6s forwards;
+}
+h1 {
+    font-size: 2.8em; /* Larger heading */
+    margin: 10px 0;
+    color: #8b0000; /* Accent dark red */
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 0.8s forwards;
+}
+h2 {
+    font-size: 1.4em; /* Slightly larger subheading */
+    margin: 10px 0;
+    color: #444; /* Softer contrast */
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 1s forwards;
+}
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 1.2s forwards;
+}
+.contact-info a {
+    color: #8b0000; /* Dark red links */
+    text-decoration: none;
+    font-size: 1.2em; /* Slightly larger text */
+    font-weight: bold;
+}
+.contact-info a:hover {
+    color: #444; /* Hover effect */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInPhoto {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
