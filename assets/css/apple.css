@@ -1,0 +1,115 @@
+/* apple.css */
+body {
+    background-color: #f5f5f7; /* Light grey background, like Apple's aesthetics */
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif; /* Apple-like system fonts */
+    color: #1d1d1f; /* Apple dark grey text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in;
+}
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff; /* White container */
+    border: 1px solid #d2d2d7; /* Light grey border */
+    color: #1d1d1f; /* Dark grey text */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    text-align: center;
+    transform: scale(0.95);
+    animation: popIn 0.6s ease-in-out forwards;
+}
+.photo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%; /* Circular photo */
+    object-fit: cover;
+    border: 2px solid #d2d2d7; /* Light grey border */
+    opacity: 0;
+    animation: fadeInPhoto 1s ease-in-out 0.6s forwards;
+}
+h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    color: #1d1d1f; /* Apple dark grey */
+    font-weight: 600; /* Semi-bold for titles */
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 0.8s forwards;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #6e6e73; /* Lighter grey for subtitles */
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 1s forwards;
+}
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out 1.2s forwards;
+}
+.contact-info a {
+    color: #007aff; /* Apple blue for links */
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.contact-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInPhoto {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

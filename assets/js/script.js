@@ -33,18 +33,42 @@ async function loadProfile() {
     
 }
 
+// Define available themes
+const themes = ['colorful', 'cyberpunk', 'retro', 'japanese', 'rhel', 'fedora', 'suse', 'xmas', 'simplew', 'simpleb', 'ubuntu', 'apple', 'microsoft'];
+
+// Function to get a random theme
+function getRandomTheme() {
+    const randomIndex = Math.floor(Math.random() * themes.length);
+    return themes[randomIndex];
+}
+
 // Change themes based on the URL hash
 window.addEventListener('hashchange', () => {
-    const theme = location.hash.replace('#', '');
+    let theme = location.hash.replace('#', '');
+    
+    // If the hash is #random, pick a random theme
+    if (theme === 'random') {
+        theme = getRandomTheme();
+        location.hash = theme; // Update the hash to the selected theme
+    }
+    
     const themeLink = document.getElementById('theme');
     themeLink.href = `assets/css/${theme}.css`;
 });
 
 // Initialize theme on load
 window.addEventListener('load', () => {
-    const theme = location.hash.replace('#', '') || 'default';
+    let theme = location.hash.replace('#', '') || 'colorful';
+    
+    // If the hash is #random, pick a random theme
+    if (theme === 'random') {
+        theme = getRandomTheme();
+        location.hash = theme; // Update the hash to the selected theme
+    }
+    
     const themeLink = document.getElementById('theme');
     themeLink.href = `assets/css/${theme}.css`;
     loadProfile();
 });
+
 
