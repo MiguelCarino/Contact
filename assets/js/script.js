@@ -11,9 +11,9 @@ async function loadProfile() {
 
     const icons = {
         whatsapp: '<i class="fab fa-whatsapp"></i>',
+        telegram: '<i class="fab fa-telegram"></i>',
         linkedin: '<i class="fab fa-linkedin"></i>',
         steam: '<i class="fab fa-steam"></i>',
-        gog: '<i class="fas fa-gamepad"></i>',
         mastodon: '<i class="fab fa-mastodon"></i>',
         mail: '<i class="fas fa-envelope"></i>',
     };
