@@ -33,7 +33,7 @@ async function loadProfile() {
 }
 
 // Define available themes
-const themes = ['colorful', 'cyberpunk', 'retro', 'japanese', 'rhel', 'fedora', 'suse', 'xmas', 'simplew', 'simpleb', 'ubuntu', 'apple', 'microsoft'];
+const themes = ['colorful', 'cyberpunk', 'retro', 'rhel', 'fedora', 'suse', 'simplew', 'simpleb', 'ubuntu', 'apple', 'microsoft'];
 
 function getRandomTheme() {
     const shuffledThemes = themes
