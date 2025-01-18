@@ -16,8 +16,8 @@ async function loadProfile() {
         steam: '<i class="fab fa-steam"></i>',
         mastodon: '<i class="fab fa-mastodon"></i>',
         mail: '<i class="fas fa-envelope"></i>',
+        instragram: '<i class="fa fa-instagram"></i>',
     };
-    
 
     Object.entries(profile.contacts).forEach(([key, value]) => {
         if (value) {
@@ -30,53 +30,61 @@ async function loadProfile() {
             contactList.appendChild(li);
         }
     });
-    
 }
 
 // Define available themes
 const themes = ['colorful', 'cyberpunk', 'retro', 'japanese', 'rhel', 'fedora', 'suse', 'xmas', 'simplew', 'simpleb', 'ubuntu', 'apple', 'microsoft'];
 
 function getRandomTheme() {
-    // Shuffle the themes array for added randomness
     const shuffledThemes = themes
         .map(theme => ({ theme, randomKey: Math.random() }))
         .sort((a, b) => a.randomKey - b.randomKey)
         .map(obj => obj.theme);
 
-    // Pick a random index based on the shuffled array
     const randomIndex = Math.floor(Math.random() * shuffledThemes.length);
 
-    // Return the randomly chosen theme, with a fallback if themes array is empty
     return shuffledThemes[randomIndex] || "default-theme";
+}
+
+// Function to dynamically load a JavaScript file
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
 }
 
 // Change themes based on the URL hash
 window.addEventListener('hashchange', () => {
     let theme = location.hash.replace('#', '');
-    
-    // If the hash is #random, pick a random theme
+
     if (theme === 'random') {
         theme = getRandomTheme();
-        location.hash = theme; // Update the hash to the selected theme
+        location.hash = theme;
     }
-    
+
     const themeLink = document.getElementById('theme');
     themeLink.href = `assets/css/${theme}.css`;
 });
 
-// Initialize theme on load
-window.addEventListener('load', () => {
-    let theme = location.hash.replace('#', '') || 'colorful';
-    
-    // If the hash is #random, pick a random theme
-    if (theme === 'random') {
-        theme = getRandomTheme();
-        location.hash = theme; // Update the hash to the selected theme
+window.addEventListener('load', async () => {
+    try {
+        let theme = location.hash.replace('#', '') || 'colorful';
+
+        if (theme === 'random') {
+            theme = getRandomTheme();
+            location.hash = theme;
+        }
+
+        const themeLink = document.getElementById('theme');
+        themeLink.href = `assets/css/${theme}.css`;
+
+        // Load the profile data
+        loadProfile();
+    } catch (error) {
+        console.error('Error loading script.js:', error);
     }
-    
-    const themeLink = document.getElementById('theme');
-    themeLink.href = `assets/css/${theme}.css`;
-    loadProfile();
 });
-
-

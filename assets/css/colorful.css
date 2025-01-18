@@ -1,8 +1,5 @@
-/* colorful.css - Default */
+/* structure */
 body {
-    background-image: linear-gradient(to right, #ff7eb3, #ff758c, #ff8b65);
-    color: #333;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,36 +11,33 @@ body {
 .container {
     width: 90%;
     max-width: 400px;
-    border: 3px solid #fff;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px; /* Rounded corners */
     text-align: center;
-    transform: scale(0.8);
+    transform: scale(0.95);
     animation: popIn 0.6s ease-in-out forwards;
 }
 .photo {
     display: block;
     margin: 0 auto 20px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%; /* Circular photo */
     object-fit: cover;
-    border: 3px solid #ff4d4d;
     opacity: 0;
     animation: fadeInPhoto 1s ease-in-out 0.6s forwards;
 }
 h1 {
     font-size: 2.5em;
     margin: 10px 0;
+    font-weight: 700; /* Bold for emphasis */
+    text-transform: uppercase;
     opacity: 0;
     animation: fadeInText 1s ease-in-out 0.8s forwards;
 }
 h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 10px 0;
-    color: #666;
     opacity: 0;
     animation: fadeInText 1s ease-in-out 1s forwards;
 }
@@ -59,13 +53,30 @@ h2 {
     animation: fadeInText 1s ease-in-out 1.2s forwards;
 }
 .contact-info a {
-    color: #ff4d4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-size: 1.1em;
-    font-weight: bold;
+    font-weight: 600;
+    width: 10em; /* Fixed width for uniform size */
+    height: 2.5em; /* Fixed height for uniform size */
+    gap: 0.5em; /*Give space between brand icon and text*/
+    border-radius: 6px; /* Rounded corners */
+    transition: all 0.3s ease;
 }
-.contact-info a:hover {
-    color: #333;
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+    .contact-info a {
+        width: 14em; /* Full width buttons */
+        height: 2.5em; /* Ensure uniform height */
+        margin-bottom: 10px; /* Spacing between buttons */
+    }
 }
 
 /* Animations */
@@ -80,7 +91,7 @@ h2 {
 
 @keyframes popIn {
     from {
-        transform: scale(0.8);
+        transform: scale(0.95);
         opacity: 0;
     }
     to {
@@ -109,4 +120,34 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* colorful-colors.css */
+body {
+    font-family: Arial, sans-serif; /* Default font */
+    background-image: linear-gradient(to right, #ff7eb3, #ff758c, #ff8b65);
+    color: #333; /* Default text color */
+}
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border: 3px solid #fff; /* White border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+.photo {
+    border: 3px solid #ff4d4d; /* Red border */
+}
+h1 {
+    font-size: 1.5em;
+}
+h2 {
+    font-size: 1.7em;
+    color: #666; /* Light gray */
+}
+.contact-info a {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff4d4d; /* Red text */
+}
+.contact-info a:hover {
+    color: #333; /* Dark gray hover */
 }

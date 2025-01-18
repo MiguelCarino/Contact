@@ -1,8 +1,5 @@
-/* cyberpunk.css */
+/* structure */
 body {
-    background-color: #0d0221;
-    color: #ff00ff;
-    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,37 +11,33 @@ body {
 .container {
     width: 90%;
     max-width: 400px;
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid #ff00ff;
-    color: #00ffff;
-    box-shadow: 0 0 15px #ff00ff;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px; /* Rounded corners */
     text-align: center;
-    transform: scale(0.8);
+    transform: scale(0.95);
     animation: popIn 0.6s ease-in-out forwards;
 }
 .photo {
     display: block;
     margin: 0 auto 20px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%; /* Circular photo */
     object-fit: cover;
-    border: 3px solid #00ffff;
     opacity: 0;
     animation: fadeInPhoto 1s ease-in-out 0.6s forwards;
 }
 h1 {
     font-size: 2.5em;
     margin: 10px 0;
+    font-weight: 700; /* Bold for emphasis */
+    text-transform: uppercase;
     opacity: 0;
     animation: fadeInText 1s ease-in-out 0.8s forwards;
 }
 h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 10px 0;
-    color: #00ffff;
     opacity: 0;
     animation: fadeInText 1s ease-in-out 1s forwards;
 }
@@ -60,15 +53,30 @@ h2 {
     animation: fadeInText 1s ease-in-out 1.2s forwards;
 }
 .contact-info a {
-    color: #ff00ff;
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-size: 1.1em;
-    opacity: 0;
-    animation: fadeInText 1s ease-in-out 1s forwards;
+    font-weight: 600;
+    width: 10em; /* Fixed width for uniform size */
+    height: 2.5em; /* Fixed height for uniform size */
+    gap: 0.5em; /*Give space between brand icon and text*/
+    border-radius: 6px; /* Rounded corners */
+    transition: all 0.3s ease;
 }
-.contact-info a:hover {
-    color: #00ffff;
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+    .contact-info a {
+        width: 14em; /* Full width buttons */
+        height: 2.5em; /* Ensure uniform height */
+        margin-bottom: 10px; /* Spacing between buttons */
+    }
 }
 
 /* Animations */
@@ -83,7 +91,7 @@ h2 {
 
 @keyframes popIn {
     from {
-        transform: scale(0.8);
+        transform: scale(0.95);
         opacity: 0;
     }
     to {
@@ -112,4 +120,39 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* cyberpunk-colors.css */
+body {
+    font-family: 'Orbitron', 'Roboto Mono', monospace; /* Futuristic font */
+    background-color: #0f0f0f; /* Dark neon black background */
+    color: #00ffea; /* Neon cyan text */
+    background-image: radial-gradient(circle at 50% 50%, #0f0f0f, #1a1a1a, #000000); /* Dark gradient */
+}
+.container {
+    background: #1a1a1a; /* Dark grey container */
+    border: 2px solid #ff007a; /* Neon pink border */
+    color: #00ffea; /* Neon cyan text */
+    box-shadow: 0 0 20px #ff007a, 0 0 20px #00ffea; /* Neon glow */
+}
+.photo {
+    border: 3px solid #ff007a; /* Neon pink border */
+    box-shadow: 0 0 15px #ff007a; /* Neon glow */
+}
+h1 {
+    color: #00ffea; /* Neon cyan */
+}
+h2 {
+    color: #ff007a; /* Neon pink for subtitles */
+}
+.contact-info a {
+    color: #00ffea; /* Neon cyan text */
+    border: 2px solid #ff007a; /* Neon pink border */
+    background-color: #1a1a1a; /* Dark grey button */
+    box-shadow: 0 0 10px #ff007a, 0 0 10px #00ffea; /* Neon glow */
+}
+.contact-info a:hover {
+    background-color: #ff007a; /* Neon pink hover */
+    color: #1a1a1a; /* Dark grey text on hover */
+    box-shadow: 0 0 20px #ff007a, 0 0 20px #00ffea; /* Stronger glow */
 }

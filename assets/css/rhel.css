@@ -1,8 +1,5 @@
-/* redhat.css */
+/* structure */
 body {
-    background-color: #0c0c0c; /* Deep black background */
-    font-family: 'Red Hat Display', sans-serif; /* Official Red Hat font */
-    color: #ffffff; /* White text for contrast */
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,14 +11,10 @@ body {
 .container {
     width: 90%;
     max-width: 400px;
-    background: #1c1c1c; /* Dark grey container background */
-    border: 2px solid #cc0000; /* Red Hat red border */
-    color: #ffffff;
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5); /* Red shadow for accent */
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px; /* Rounded corners */
     text-align: center;
-    transform: scale(0.8);
+    transform: scale(0.95);
     animation: popIn 0.6s ease-in-out forwards;
 }
 .photo {
@@ -29,23 +22,22 @@ body {
     margin: 0 auto 20px;
     width: 220px;
     height: 220px;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular photo */
     object-fit: cover;
-    border: 3px solid #cc0000; /* Red Hat red border */
     opacity: 0;
     animation: fadeInPhoto 1s ease-in-out 0.6s forwards;
 }
 h1 {
-    font-size: 2.8em;
+    font-size: 2.5em;
     margin: 10px 0;
-    color: #cc0000; /* Red Hat red */
+    font-weight: 700; /* Bold for emphasis */
+    text-transform: uppercase;
     opacity: 0;
     animation: fadeInText 1s ease-in-out 0.8s forwards;
 }
 h2 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     margin: 10px 0;
-    color: #ffffff; /* White text for clarity */
     opacity: 0;
     animation: fadeInText 1s ease-in-out 1s forwards;
 }
@@ -61,13 +53,30 @@ h2 {
     animation: fadeInText 1s ease-in-out 1.2s forwards;
 }
 .contact-info a {
-    color: #cc0000; /* Red Hat red links */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.1em;
+    font-weight: 600;
+    width: 10em; /* Fixed width for uniform size */
+    height: 2.5em; /* Fixed height for uniform size */
+    gap: 0.5em; /*Give space between brand icon and text*/
+    border-radius: 6px; /* Rounded corners */
+    transition: all 0.3s ease;
 }
-.contact-info a:hover {
-    color: #ffffff; /* Hover effect to white */
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+    .contact-info a {
+        width: 14em; /* Full width buttons */
+        height: 2.5em; /* Ensure uniform height */
+        margin-bottom: 10px; /* Spacing between buttons */
+    }
 }
 
 /* Animations */
@@ -82,7 +91,7 @@ h2 {
 
 @keyframes popIn {
     from {
-        transform: scale(0.8);
+        transform: scale(0.95);
         opacity: 0;
     }
     to {
@@ -111,4 +120,36 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* redhat-colors.css */
+body {
+    font-family: 'Red Hat Display', sans-serif; /* Official Red Hat font */
+    background-color: #0c0c0c; /* Deep black background */
+    color: #ffffff; /* White text for contrast */
+}
+.container {
+    background: #1c1c1c; /* Dark grey container background */
+    border: 2px solid #cc0000; /* Red Hat red border */
+    color: #ffffff; /* White text */
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5); /* Red shadow for accent */
+}
+.photo {
+    border: 3px solid #cc0000; /* Red Hat red border */
+}
+h1 {
+    font-size: 2em;
+    color: #cc0000; /* Red Hat red */
+}
+h2 {
+    font-size: 1.6em;
+    color: #ffffff; /* White text for clarity */
+}
+.contact-info a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #cc0000; /* Red Hat red links */
+}
+.contact-info a:hover {
+    color: #ffffff; /* Hover effect to white */
 }
