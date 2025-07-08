@@ -72,7 +72,7 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', async () => {
     try {
-        let theme = location.hash.replace('#', '') || 'colorful';
+        let theme = location.hash.replace('#', '') || 'simpleb';
 
         if (theme === 'random') {
             theme = getRandomTheme();
